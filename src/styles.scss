@@ -1,1 +1,17 @@
-/* You can add global styles to this file, and also import other style files */
+// @import url("../src/assets/themes/soho-dark.css");
+
+html {
+  height: 100%;
+}
+
+body {
+  width: 100vw;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  user-select: none;
+  background: #333333;
+  box-sizing: border-box;
+  z-index: 1000;
+}
