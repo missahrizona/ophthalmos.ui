@@ -33,9 +33,7 @@ export class AppComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    console.log(this.document.body.clientWidth);
-    console.log(this.deviceDetector.getDeviceInfo());
-    if (this.deviceDetector.isDesktop() || this.deviceDetector.isTablet()) {
+    if (this.document.body.clientWidth > 1000) {
       console.log('desktop or tablet');
 
       CELLS({
@@ -46,7 +44,7 @@ export class AppComponent implements OnInit, AfterViewInit {
         scale: 1,
         scaleMobile: 3,
       });
-    } else if (this.deviceDetector.isMobile()) {
+    } else if () {
       console.log('mobile');
       CELLS({
         el: this.bgWrap.nativeElement,
