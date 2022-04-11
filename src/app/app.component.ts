@@ -44,7 +44,7 @@ export class AppComponent implements OnInit, AfterViewInit {
         scale: 1,
         scaleMobile: 3,
       });
-    } else if () {
+    } else {
       console.log('mobile');
       CELLS({
         el: this.bgWrap.nativeElement,
