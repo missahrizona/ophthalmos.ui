@@ -4,11 +4,13 @@ import {
   ElementRef,
   OnInit,
   AfterViewInit,
+  Inject,
 } from '@angular/core';
 
 import { PrimeNGConfig } from 'primeng/api';
 import { DeviceDetectorService } from 'ngx-device-detector';
 import CELLS from 'vanta/dist/vanta.cells.min';
+import { DOCUMENT } from '@angular/common';
 
 declare const VANTA: any;
 
@@ -20,7 +22,8 @@ declare const VANTA: any;
 export class AppComponent implements OnInit, AfterViewInit {
   constructor(
     private primeConfig: PrimeNGConfig,
-    private deviceDetector: DeviceDetectorService
+    private deviceDetector: DeviceDetectorService,
+    @Inject(DOCUMENT) private document: Document
   ) {}
 
   @ViewChild('bgWrap') bgWrap: ElementRef;
@@ -30,6 +33,8 @@ export class AppComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit(): void {
+    console.log(this.document.body.clientWidth);
+    console.log(this.deviceDetector.getDeviceInfo());
     if (this.deviceDetector.isDesktop() || this.deviceDetector.isTablet()) {
       console.log('desktop or tablet');
 
@@ -37,7 +42,7 @@ export class AppComponent implements OnInit, AfterViewInit {
         el: this.bgWrap.nativeElement,
         color1: 0x26b97f,
         color2: 0x38c3c3,
-        size: 2,
+        size: 2.9,
         scale: 1,
         scaleMobile: 3,
       });
