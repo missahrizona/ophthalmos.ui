@@ -40,7 +40,7 @@ export class AppComponent implements OnInit, AfterViewInit {
         el: this.bgWrap.nativeElement,
         color1: 0x26b97f,
         color2: 0x38c3c3,
-        size: 2.9,
+        size: 2,
         scale: 1,
         scaleMobile: 3,
       });
@@ -50,7 +50,7 @@ export class AppComponent implements OnInit, AfterViewInit {
         el: this.bgWrap.nativeElement,
         color1: 0x26b97f,
         color2: 0x38c3c3,
-        size: 1,
+        size: 0.75,
         scale: 1,
         scaleMobile: 3,
       });
