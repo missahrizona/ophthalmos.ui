@@ -74,7 +74,7 @@ span.pi.pi-lock {
 .glow {
   position: relative;
   display: block;
-  transition: 0.5s;
+  transition: 0.6s;
 }
 
 // .glow::before {
@@ -95,7 +95,8 @@ span.pi.pi-lock {
 // }
 
 .glow:hover {
-  color: #052833;
+  color: white;
   transform: scale(2);
-  text-shadow: 0 0 25px #14aadc;
+  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #a9f9e4, 0 0 20px #89ffe0,
+    0 0 25px #6affd7, 0 0 30px #41ffcc, 0 0 30px #00ffbb;
 }
