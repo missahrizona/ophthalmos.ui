@@ -1,3 +1,38 @@
-<div #bgWrap class="bg-wrap"></div>
+<div
+  #bgWrap
+  class="bg-wrap"
+  [ngClass]="{ 'bg-wrap-nodisplay': showAppWithOpacity }"
+></div>
 
-<router-outlet></router-outlet>
+<div
+  class="home-wrap p-component"
+  [ngClass]="{ 'home-wrap-nodisplay': showAppWithOpacity }"
+>
+  <span class="header-text glow">Ophthalmos</span>
+  <br />
+
+  <div class="header-content">
+    <span (click)="begin()" class="pi pi-lock emrs-lock"></span>
+  </div>
+</div>
+
+<div
+  class="global-container p-component"
+  [ngClass]="{ 'allow-pointer-events': allowPointerEvents }"
+>
+  <div
+    [ngClass]="{
+      'global-animation': animate,
+      'global-bg-transparent': showAppWithOpacity
+    }"
+    class="global-animation-inner p-component"
+    (transitionend)="onTransitionEnd()"
+  >
+    <div
+      class="global-inner p-component"
+      [ngClass]="{ 'global-inner-show': showAppWithOpacity }"
+    >
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

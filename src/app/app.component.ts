@@ -24,7 +24,15 @@ export class AppComponent implements OnInit, AfterViewInit {
     private primeConfig: PrimeNGConfig,
     private deviceDetector: DeviceDetectorService,
     @Inject(DOCUMENT) private document: Document
-  ) {}
+  ) {
+    this.animate = false;
+    this.showAppWithOpacity = false;
+    this.allowPointerEvents = false
+  }
+
+  animate: boolean;
+  showAppWithOpacity: boolean;
+  allowPointerEvents: boolean;
 
   @ViewChild('bgWrap') bgWrap: ElementRef;
 
@@ -55,5 +63,14 @@ export class AppComponent implements OnInit, AfterViewInit {
         scaleMobile: 3,
       });
     }
+  }
+
+  onTransitionEnd() {
+    this.showAppWithOpacity = true;
+    this.allowPointerEvents = true;
+  }
+
+  begin() {
+    this.animate = true;
   }
 }

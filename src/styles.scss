@@ -20,3 +20,24 @@ body {
   z-index: 1000;
   font-family: "Open Sans", sans-serif;
 }
+
+p-menubar > .p-menubar {
+  border-radius: 0px !important;
+}
+
+.p-tabmenu-nav {
+}
+
+.p-tabmenuitem {
+  padding-right: 5px !important;
+}
+
+.p-skeleton {
+  margin: 10px 10px 10px 10px !important;
+  box-sizing: border-box;
+}
+
+.p-datatable-wrapper {
+  border-radius: 20px !important;
+  background-color: #333333;
+}
