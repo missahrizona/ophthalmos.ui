@@ -6,7 +6,7 @@
 
 <div class="home-viewport">
   <div class="tab-container">
-    <p-tabMenu [model]="tabItems" [activeItem]="activeTab"></p-tabMenu>
+    <!-- <p-tabMenu [model]="tabItems" [activeItem]="activeTab"></p-tabMenu>
     <div class="skeleton-viewport">
       <div class="skeleton-wrap">
         <p-skeleton styleClass="mb-2"></p-skeleton>
@@ -34,6 +34,63 @@
           </ng-template>
         </p-table>
       </div>
-    </div>
+    </div> -->
+
+    <p-card>
+      <p-tabView styleClass="tabview-custom">
+        <p-tabPanel>
+          <ng-template pTemplate="header">
+            <i class="pi pi-id-card"></i>
+            <span class="icon-header-gap"></span>
+            <span>Demographics</span>
+          </ng-template>
+          <div class="tab-content-viewport">
+            <her-demographics></her-demographics>
+          </div>
+        </p-tabPanel>
+        <p-tabPanel header="Header II">
+          <ng-template pTemplate="header">
+            <i class="pi pi-user"></i>
+            <span class="icon-header-gap"></span>
+            <span>Health History</span>
+          </ng-template>
+          <her-heath-history></her-heath-history>
+        </p-tabPanel>
+        <p-tabPanel header="Header III">
+          <ng-template pTemplate="header">
+            <i class="pi pi-search"></i>
+            <span class="icon-header-gap"></span>
+            <span>Physical Exam Detail</span>
+          </ng-template>
+          <her-physical-exam-detail></her-physical-exam-detail>
+        </p-tabPanel>
+        <p-tabPanel>
+          <ng-template pTemplate="header">
+            <i class="pi pi-heart"></i>
+            <span class="icon-header-gap"></span>
+            <span>Vitals</span>
+          </ng-template>
+          <her-vitals></her-vitals>
+        </p-tabPanel>
+        <p-tabPanel header="Header II">
+          <ng-template pTemplate="header">
+            <i class="pi pi-pencil"></i>
+            <span class="icon-header-gap"></span>
+            <span>Surgical Procedures</span>
+          </ng-template>
+          <div class="tab-content-viewport">
+            <her-surgical-procedures></her-surgical-procedures>
+          </div>
+        </p-tabPanel>
+        <p-tabPanel header="Header III">
+          <ng-template pTemplate="header">
+            <i class="pi pi-file"></i>
+            <span class="icon-header-gap"></span>
+            <span>Documents</span>
+          </ng-template>
+          <her-documents></her-documents>
+        </p-tabPanel>
+      </p-tabView>
+    </p-card>
   </div>
 </div>

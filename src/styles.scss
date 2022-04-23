@@ -41,3 +41,9 @@ p-menubar > .p-menubar {
   border-radius: 20px !important;
   background-color: #333333;
 }
+
+.p-card {
+  height: 100%;
+  overflow-y: auto;
+  position: relative;
+}
