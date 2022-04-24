@@ -24,6 +24,9 @@ import { VitalsComponent } from './components/vitals/vitals.component';
 import { SurgicalProceduresComponent } from './components/surgical-procedures/surgical-procedures.component';
 import { DocumentsComponent } from './components/documents/documents.component';
 import { EditorModule } from 'primeng/editor';
+import { FieldsetModule } from 'primeng/fieldset';
+
+import { PdfViewerModule } from 'ng2-pdf-viewer';
 
 @NgModule({
   declarations: [
@@ -52,6 +55,8 @@ import { EditorModule } from 'primeng/editor';
     TabViewModule,
     CardModule,
     EditorModule,
+    PdfViewerModule,
+    FieldsetModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

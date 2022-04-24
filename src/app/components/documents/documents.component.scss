@@ -1,0 +1,11 @@
+// .pdf-viewport {
+//   width: -webkit-fill-available;
+//   height: -webkit-fill-available;
+// }
+
+pdf-viewer {
+  position: relative;
+  height: 90vmin;
+  width: 100%;
+  max-width: 100%;
+}

@@ -44,6 +44,38 @@ p-menubar > .p-menubar {
 
 .p-card {
   height: 100%;
-  overflow-y: auto;
+  overflow-y: hidden;
   position: relative;
+}
+
+.p-tabview-nav-link > span {
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+  max-width: 80% !important;
+}
+
+.p-tabview-panel {
+  overflow: auto;
+}
+
+.p-panel {
+  min-height: -webkit-fill-available;
+}
+.p-panel-content {
+  min-height: -webkit-fill-available;
+}
+
+// div.tab-container div {
+//   height: unset;
+// }
+.home-panel {
+  height: -webkit-fill-available;
+}
+.p-toggleable-content {
+  height: -webkit-fill-available;
+}
+
+.ng2-pdf-viewer-container {
+  overflow: auto;
 }

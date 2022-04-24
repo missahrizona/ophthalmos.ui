@@ -36,9 +36,11 @@
       </div>
     </div> -->
 
-    <p-card>
-      <p-tabView styleClass="tabview-custom">
-        <p-tabPanel>
+    <!-- <p-fieldset legend="Patient Name" [toggleable]="true"> </p-fieldset> -->
+
+    <p-panel [styleClass]="'home-panel'" header="Header" [toggleable]="true">
+      <p-tabView styleClass="tabview-custom" [scrollable]="true">
+        <p-tabPanel tooltip="Demographics">
           <ng-template pTemplate="header">
             <i class="pi pi-id-card"></i>
             <span class="icon-header-gap"></span>
@@ -48,7 +50,7 @@
             <her-demographics></her-demographics>
           </div>
         </p-tabPanel>
-        <p-tabPanel header="Header II">
+        <p-tabPanel tooltip="Health History">
           <ng-template pTemplate="header">
             <i class="pi pi-user"></i>
             <span class="icon-header-gap"></span>
@@ -56,7 +58,7 @@
           </ng-template>
           <her-heath-history></her-heath-history>
         </p-tabPanel>
-        <p-tabPanel header="Header III">
+        <p-tabPanel tooltip="Physical Exam Details">
           <ng-template pTemplate="header">
             <i class="pi pi-search"></i>
             <span class="icon-header-gap"></span>
@@ -64,7 +66,7 @@
           </ng-template>
           <her-physical-exam-detail></her-physical-exam-detail>
         </p-tabPanel>
-        <p-tabPanel>
+        <p-tabPanel tooltip="Vitals">
           <ng-template pTemplate="header">
             <i class="pi pi-heart"></i>
             <span class="icon-header-gap"></span>
@@ -72,7 +74,7 @@
           </ng-template>
           <her-vitals></her-vitals>
         </p-tabPanel>
-        <p-tabPanel header="Header II">
+        <p-tabPanel tooltip="Surgical Procedures">
           <ng-template pTemplate="header">
             <i class="pi pi-pencil"></i>
             <span class="icon-header-gap"></span>
@@ -82,7 +84,7 @@
             <her-surgical-procedures></her-surgical-procedures>
           </div>
         </p-tabPanel>
-        <p-tabPanel header="Header III">
+        <p-tabPanel tooltip="Documents">
           <ng-template pTemplate="header">
             <i class="pi pi-file"></i>
             <span class="icon-header-gap"></span>
@@ -91,6 +93,6 @@
           <her-documents></her-documents>
         </p-tabPanel>
       </p-tabView>
-    </p-card>
+    </p-panel>
   </div>
 </div>
