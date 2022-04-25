@@ -1,6 +1,7 @@
-import { ButtonModule } from 'primeng/button';
+import { DemographicsComponent } from './../demographics/demographics.component';
 import { Component, OnInit } from '@angular/core';
 import { MenuItem } from 'primeng/api';
+import { DocumentsComponent } from '../documents/documents.component';
 
 @Component({
   selector: 'her-home',
@@ -12,6 +13,15 @@ export class HomeComponent implements OnInit {
   tabItems: MenuItem[];
   activeTab: MenuItem;
   products: any[];
+
+  demo: DemographicsComponent = new DemographicsComponent();
+
+  tabviews: any[] = [
+    {
+      name: 'Demographics',
+      component: this.demo,
+    },
+  ];
 
   ngOnInit() {
     this.menuItems = [
@@ -37,5 +47,11 @@ export class HomeComponent implements OnInit {
     this.activeTab = this.tabItems[0];
 
     this.products = [1, 2, 3, 4, 5];
+  }
+
+  toggle(evt: any) {
+    console.log('toggle fieldset');
+    //             fields.style.height =
+    // fields.style.height == 'auto' ? '100%' : 'auto';
   }
 }

@@ -1,44 +1,20 @@
-<p-menubar [model]="menuItems"></p-menubar>
+<p-menubar [model]="menuItems">
+  <ng-template pTemplate="start">
+    <div class="app-logo"></div>
+  </ng-template>
+  <ng-template pTemplate="end">
+    <input type="text" pInputText placeholder="Search" />
+  </ng-template>
+</p-menubar>
 
 <!-- <div>
 
 </div> -->
 
-<div class="home-viewport">
-  <div class="tab-container">
-    <!-- <p-tabMenu [model]="tabItems" [activeItem]="activeTab"></p-tabMenu>
-    <div class="skeleton-viewport">
-      <div class="skeleton-wrap">
-        <p-skeleton styleClass="mb-2"></p-skeleton>
-        <p-skeleton width="10rem" styleClass="mb-2"></p-skeleton>
-        <p-skeleton width="5rem" styleClass="mb-2"></p-skeleton>
-        <p-skeleton height="2rem" styleClass="mb-2"></p-skeleton>
-        <p-skeleton width="10rem" height="4rem"></p-skeleton>
-        <br />
-        <p-table [value]="products" responsiveLayout="scroll">
-          <ng-template pTemplate="header">
-            <tr>
-              <th>Code</th>
-              <th>Name</th>
-              <th>Category</th>
-              <th>Quantity</th>
-            </tr>
-          </ng-template>
-          <ng-template pTemplate="body" let-product>
-            <tr>
-              <td><p-skeleton></p-skeleton></td>
-              <td><p-skeleton></p-skeleton></td>
-              <td><p-skeleton></p-skeleton></td>
-              <td><p-skeleton></p-skeleton></td>
-            </tr>
-          </ng-template>
-        </p-table>
-      </div>
-    </div> -->
-
-    <!-- <p-fieldset legend="Patient Name" [toggleable]="true"> </p-fieldset> -->
-
-    <p-panel [styleClass]="'home-panel'" header="Header" [toggleable]="true">
+<div class="home-viewport p-input-filled">
+  <div #fields class="tab-container">
+    <p-fieldset [toggleable]="true">
+      <ng-template pTemplate="header"><div>Patient Zero</div></ng-template>
       <p-tabView styleClass="tabview-custom" [scrollable]="true">
         <p-tabPanel tooltip="Demographics">
           <ng-template pTemplate="header">
@@ -46,9 +22,7 @@
             <span class="icon-header-gap"></span>
             <span>Demographics</span>
           </ng-template>
-          <div class="tab-content-viewport">
-            <her-demographics></her-demographics>
-          </div>
+          <her-demographics></her-demographics>
         </p-tabPanel>
         <p-tabPanel tooltip="Health History">
           <ng-template pTemplate="header">
@@ -93,6 +67,6 @@
           <her-documents></her-documents>
         </p-tabPanel>
       </p-tabView>
-    </p-panel>
+    </p-fieldset>
   </div>
 </div>

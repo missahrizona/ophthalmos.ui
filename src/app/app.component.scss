@@ -56,7 +56,7 @@ span.pi.pi-lock {
   }
   10% {
     transform: rotate(-15deg) scale(1.5);
-    color: rgb(255, 238, 0);
+    // color: rgb(255, 238, 0);
   }
   15% {
     transform: rotate(0deg) scale(1.5);
@@ -112,7 +112,7 @@ span.pi.pi-lock {
 }
 .global-animation-inner {
   height: 100%;
-  background-color: #212121;
+  background-color: #efefef;
   width: 0;
   transition: width 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
   z-index: 100;

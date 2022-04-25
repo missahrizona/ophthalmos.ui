@@ -1,8 +1,73 @@
-<p>
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-  incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-  nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-  Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
-  eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt
-  in culpa qui officia deserunt mollit anim id est laborum.
-</p>
+<div class="demographics-viewport">
+  <!-- <div class="p-fluid grid">
+    <div class="field col-12 md:col-12">
+      
+    </div>
+  </div> -->
+
+  <p-divider align="left" type="solid">
+    <b>Personal</b>
+  </p-divider>
+
+  <div class="p-fluid grid">
+    <div class="field col-12 md:col-4">
+      <span class="p-float-label p-input-icon-left">
+        <i #nameIcon class="pi pi-user"></i>
+        <input
+          (focusin)="nameIcon.style.color = '#03a9f4'"
+          (focusout)="nameIcon.style.color = ''"
+          type="text"
+          id="demo-name"
+          pInputText
+          [(ngModel)]="demoName"
+        />
+        <label for="demo-name">Name</label>
+      </span>
+    </div>
+    <div class="field col-12 md:col-4">
+      <span class="p-float-label p-input-icon-left">
+        <p-calendar
+          [showIcon]="true"
+          inputId="demo-bday"
+          [(ngModel)]="demoBday"
+        ></p-calendar>
+        <label for="demo-bday">B-Day</label>
+      </span>
+    </div>
+    <div class="field col-12 md:col-4">
+      <span class="p-float-label p-input-icon-left">
+        <i class="pi pi-sun"></i>
+        <p-dropdown
+          inputId="demo-gender"
+          [options]="genders"
+          [(ngModel)]="demoGender"
+          [showClear]="true"
+          placeholder="Gender"
+        ></p-dropdown>
+      </span>
+    </div>
+    <div class="field col-12 md:col-4">
+      <span class="p-float-label p-input-icon-left">
+        <i class="pi pi-sun"></i>
+        <p-dropdown
+          inputId="demo-race"
+          [options]="races"
+          [(ngModel)]="demoRace"
+          [showClear]="true"
+          placeholder="Ethnicity / Race"
+        ></p-dropdown>
+      </span>
+    </div>
+    <div class="field col-12 md:col-4">
+      <span class="p-float-label p-input-icon-right">
+        <i class="pi pi-phone"></i>
+        <p-inputMask
+          mask="(999) 999-9999"
+          [(ngModel)]="demoContact"
+          placeholder="(999) 999-9999"
+        ></p-inputMask>
+      </span>
+    </div>
+    <div class="col-12 md:col-12"><div class="demographics-bg"></div></div>
+  </div>
+</div>

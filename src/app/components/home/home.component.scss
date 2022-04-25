@@ -3,7 +3,7 @@
   height: 100%;
   padding: 20px 20px 20px 20px;
   //   margin: 10px 10px 10px 10px;
-  background-color: #212121;
+  //   background-color: #212121;
   background-clip: content-box;
   border-radius: 3% !important;
   box-sizing: border-box;
@@ -45,4 +45,19 @@
 
 .home-panel {
   height: -webkit-fill-available;
+}
+
+.app-logo {
+  background-image: url(../../../assets/images/vision-logo-2.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 40px;
+  width: 40px;
+  transition: transform 0.5s ease-in;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.app-logo:hover {
+  transform: scale(1.25);
 }

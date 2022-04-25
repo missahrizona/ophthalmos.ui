@@ -1,0 +1,17 @@
+.demographics-viewport {
+  width: -webkit-fill-available;
+  height: -webkit-fill-available;
+  padding: 20px 20px 20px 20px;
+}
+
+.demographics-bg {
+  background-image: url(../../../assets/images/cv.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-clip: content-box;
+  background-position: bottom;
+  height: -webkit-fill-available;
+  width: -webkit-fill-available;
+  display: flex;
+  flex-direction: column;
+}

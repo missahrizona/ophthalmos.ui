@@ -56,7 +56,8 @@ p-menubar > .p-menubar {
 }
 
 .p-tabview-panel {
-  overflow: auto;
+  //   overflow: auto;
+  height: -webkit-fill-available;
 }
 
 .p-panel {
@@ -64,18 +65,39 @@ p-menubar > .p-menubar {
 }
 .p-panel-content {
   min-height: -webkit-fill-available;
+  display: flex;
+  max-height: calc(100% - 20vh);
 }
 
-// div.tab-container div {
-//   height: unset;
-// }
 .home-panel {
   height: -webkit-fill-available;
 }
 .p-toggleable-content {
   height: -webkit-fill-available;
+  background-image: url(./assets/images/hand-gears.png) !important;
+  background-size: contain !important;
+  background-repeat: no-repeat !important;
+  background-clip: content-box;
+  background-position: bottom !important;
 }
 
 .ng2-pdf-viewer-container {
   overflow: auto;
+}
+
+.p-tabview-nav-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+.p-tabview-nav-content {
+  width: -webkit-fill-available;
+}
+
+fieldset {
+  height: 100%;
+}
+
+legend {
+  pointer-events: all;
 }
