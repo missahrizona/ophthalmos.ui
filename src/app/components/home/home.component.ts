@@ -1,7 +1,6 @@
 import { DemographicsComponent } from './../demographics/demographics.component';
 import { Component, OnInit } from '@angular/core';
 import { MenuItem } from 'primeng/api';
-import { DocumentsComponent } from '../documents/documents.component';
 
 @Component({
   selector: 'her-home',
@@ -13,15 +12,6 @@ export class HomeComponent implements OnInit {
   tabItems: MenuItem[];
   activeTab: MenuItem;
   products: any[];
-
-  demo: DemographicsComponent = new DemographicsComponent();
-
-  tabviews: any[] = [
-    {
-      name: 'Demographics',
-      component: this.demo,
-    },
-  ];
 
   ngOnInit() {
     this.menuItems = [
@@ -45,8 +35,6 @@ export class HomeComponent implements OnInit {
       { label: 'Documents', icon: 'pi pi-fw pi-file-o' },
     ];
     this.activeTab = this.tabItems[0];
-
-    this.products = [1, 2, 3, 4, 5];
   }
 
   toggle(evt: any) {

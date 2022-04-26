@@ -31,6 +31,11 @@ import { MenuModule } from 'primeng/menu';
 import { CalendarModule } from 'primeng/calendar';
 import { DropdownModule } from 'primeng/dropdown';
 import { InputMaskModule } from 'primeng/inputmask';
+import { MultiSelectModule } from 'primeng/multiselect';
+import { SelectButtonModule } from 'primeng/selectbutton';
+import { CheckboxModule } from 'primeng/checkbox';
+import { ChipsModule } from 'primeng/chips';
+import { ToggleButtonModule } from 'primeng/togglebutton';
 
 import { PdfViewerModule } from 'ng2-pdf-viewer';
 
@@ -69,6 +74,11 @@ import { PdfViewerModule } from 'ng2-pdf-viewer';
     CalendarModule,
     DropdownModule,
     InputMaskModule,
+    MultiSelectModule,
+    SelectButtonModule,
+    CheckboxModule,
+    ChipsModule,
+    ToggleButtonModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

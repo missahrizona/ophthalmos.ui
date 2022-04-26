@@ -1,1 +1,106 @@
+<div class="grid p-fluid">
+  <div class="col sm:col-12 lg:col-6">
+    <p-card header="History">
+      <div class="grid p-fluid">
+        <div class="col-12">
+          <span class="p-float-label">
+            <p-multiSelect
+              inputId="multiselect"
+              [options]="conditions"
+              [(ngModel)]="selectedConditions"
+              display="chip"
+            ></p-multiSelect>
+            <label for="multiselect">Presenting condition(s)</label>
+          </span>
+        </div>
 
+        <div class="col-12"><p-divider></p-divider></div>
+
+        <div class="col sm:col-12 lg:col-6">
+          <h5>Allergies?</h5>
+          <p-selectButton
+            [options]="yesNo"
+            [(ngModel)]="allergy"
+          ></p-selectButton>
+        </div>
+        <div class="col sm:col-12 lg:col-6">
+          <h5>Sickle Cell?</h5>
+          <p-selectButton
+            [options]="yesNo"
+            [(ngModel)]="sickleCell"
+          ></p-selectButton>
+        </div>
+
+        <div class="col-12"><p-divider></p-divider></div>
+
+        <div class="col-12">
+          <h5>Bleeding Tendency?</h5>
+          <div class="formgroup-inline">
+            <div *ngFor="let bt of bleedingTendencies" class="field-checkbox">
+              <p-checkbox
+                name="group1"
+                value="{{ bt.name }}"
+                [(ngModel)]="selectedBTs"
+                inputId="bt-aspirin"
+              ></p-checkbox>
+              <label for="{{ bt.id }}">{{ bt.name }}</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12"><p-divider></p-divider></div>
+
+        <div class="col-12">
+          <h5>Past Medical History</h5>
+
+          <div class="formgroup-inline">
+            <div
+              *ngFor="let pmh of pastMedicalHistories"
+              class="field-checkbox"
+            >
+              <p-checkbox
+                name="group1"
+                [value]="pmh.name"
+                [(ngModel)]="selectedPMHs"
+                [inputId]="pmh.id"
+              ></p-checkbox>
+              <label [for]="pmh.id">{{ pmh.name }}</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12"><p-divider></p-divider></div>
+
+        <div class="col-12">
+          <h5>Past Surgeries</h5>
+          <p-chips [(ngModel)]="pastSurgeries" separator=","></p-chips>
+
+          <h5>History of conditions in Family</h5>
+          <p-chips [(ngModel)]="pastFamilyConditions" separator=","></p-chips>
+        </div>
+      </div>
+    </p-card>
+  </div>
+  <div class="col sm:col-12 lg:col-6">
+    <p-card header="Physical Exam">
+      <div class="grid p-fluid">
+        <ng-container *ngFor="let pe of physicalExam">
+          <div style="text-align: right" class="col-4">
+            <h5>{{ pe.label }}</h5>
+          </div>
+
+          <div
+            class="col-4 col-offset-4 flex justify-content-center align-items-center"
+          >
+            <p-toggleButton
+              class="togglebutton-fill-container"
+              [(ngModel)]="pe.checked"
+              [onIcon]="'pi pi-check'"
+              offIcon="pi pi-stop"
+            ></p-toggleButton>
+          </div>
+        </ng-container>
+      </div>
+    </p-card>
+  </div>
+</div>

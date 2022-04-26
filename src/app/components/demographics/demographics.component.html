@@ -1,10 +1,4 @@
 <div class="demographics-viewport">
-  <!-- <div class="p-fluid grid">
-    <div class="field col-12 md:col-12">
-      
-    </div>
-  </div> -->
-
   <p-divider align="left" type="solid">
     <b>Personal</b>
   </p-divider>
@@ -42,8 +36,9 @@
           [options]="genders"
           [(ngModel)]="demoGender"
           [showClear]="true"
-          placeholder="Gender"
+          [autoDisplayFirst]="false"
         ></p-dropdown>
+        <label for="demo-gender">Gender</label>
       </span>
     </div>
     <div class="field col-12 md:col-4">
@@ -54,18 +49,20 @@
           [options]="races"
           [(ngModel)]="demoRace"
           [showClear]="true"
-          placeholder="Ethnicity / Race"
+          [autoDisplayFirst]="false"
         ></p-dropdown>
+        <label for="demo-race">Ethnicity / Race</label>
       </span>
     </div>
     <div class="field col-12 md:col-4">
       <span class="p-float-label p-input-icon-right">
         <i class="pi pi-phone"></i>
         <p-inputMask
+          inputId="demo-contact"
           mask="(999) 999-9999"
           [(ngModel)]="demoContact"
-          placeholder="(999) 999-9999"
         ></p-inputMask>
+        <label for="demo-contact">Phone number</label>
       </span>
     </div>
     <div class="col-12 md:col-12"><div class="demographics-bg"></div></div>

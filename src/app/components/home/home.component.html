@@ -7,15 +7,11 @@
   </ng-template>
 </p-menubar>
 
-<!-- <div>
-
-</div> -->
-
 <div class="home-viewport p-input-filled">
-  <div #fields class="tab-container">
+  <div class="patient-container">
     <p-fieldset [toggleable]="true">
       <ng-template pTemplate="header"><div>Patient Zero</div></ng-template>
-      <p-tabView styleClass="tabview-custom" [scrollable]="true">
+      <p-tabView [scrollable]="true">
         <p-tabPanel tooltip="Demographics">
           <ng-template pTemplate="header">
             <i class="pi pi-id-card"></i>
@@ -54,9 +50,7 @@
             <span class="icon-header-gap"></span>
             <span>Surgical Procedures</span>
           </ng-template>
-          <div class="tab-content-viewport">
-            <her-surgical-procedures></her-surgical-procedures>
-          </div>
+          <her-surgical-procedures></her-surgical-procedures>
         </p-tabPanel>
         <p-tabPanel tooltip="Documents">
           <ng-template pTemplate="header">

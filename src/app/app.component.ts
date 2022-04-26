@@ -26,13 +26,15 @@ export class AppComponent implements OnInit, AfterViewInit {
     @Inject(DOCUMENT) private document: Document
   ) {
     this.animate = false;
-    this.showAppWithOpacity = false;
-    this.allowPointerEvents = false
+    this.hideOverlay = false;
+    this.removeElement = false;
+    this.removeElementLast = false;
   }
 
   animate: boolean;
-  showAppWithOpacity: boolean;
-  allowPointerEvents: boolean;
+  hideOverlay: boolean;
+  removeElement: boolean;
+  removeElementLast: boolean;
 
   @ViewChild('bgWrap') bgWrap: ElementRef;
 
@@ -65,9 +67,18 @@ export class AppComponent implements OnInit, AfterViewInit {
     }
   }
 
-  onTransitionEnd() {
-    this.showAppWithOpacity = true;
-    this.allowPointerEvents = true;
+  onTransitionEnd(event: any) {
+    if (event != null && event.propertyName) {
+      switch (event.propertyName) {
+        case 'width':
+          this.hideOverlay = true;
+          this.removeElement = true;
+          break;
+        case 'opacity':
+          this.removeElementLast = true;
+          break;
+      }
+    }
   }
 
   begin() {

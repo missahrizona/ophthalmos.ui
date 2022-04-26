@@ -1,4 +1,4 @@
-@import url("../src/assets/themes/soho-dark.css");
+// @import url("../src/assets/themes/soho-dark.css");
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap");
 
 * {
@@ -25,29 +25,6 @@ p-menubar > .p-menubar {
   border-radius: 0px !important;
 }
 
-.p-tabmenu-nav {
-}
-
-.p-tabmenuitem {
-  padding-right: 5px !important;
-}
-
-.p-skeleton {
-  margin: 10px 10px 10px 10px !important;
-  box-sizing: border-box;
-}
-
-.p-datatable-wrapper {
-  border-radius: 20px !important;
-  background-color: #333333;
-}
-
-.p-card {
-  height: 100%;
-  overflow-y: hidden;
-  position: relative;
-}
-
 .p-tabview-nav-link > span {
   overflow: hidden !important;
   text-overflow: ellipsis !important;
@@ -55,49 +32,17 @@ p-menubar > .p-menubar {
   max-width: 80% !important;
 }
 
-.p-tabview-panel {
-  //   overflow: auto;
-  height: -webkit-fill-available;
-}
-
-.p-panel {
-  min-height: -webkit-fill-available;
-}
-.p-panel-content {
-  min-height: -webkit-fill-available;
-  display: flex;
-  max-height: calc(100% - 20vh);
-}
-
-.home-panel {
-  height: -webkit-fill-available;
-}
-.p-toggleable-content {
-  height: -webkit-fill-available;
-  background-image: url(./assets/images/hand-gears.png) !important;
-  background-size: contain !important;
-  background-repeat: no-repeat !important;
-  background-clip: content-box;
-  background-position: bottom !important;
-}
-
 .ng2-pdf-viewer-container {
   overflow: auto;
 }
 
-.p-tabview-nav-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
+.togglebutton-fill-container {
+  width: 100% !important;
+  height: 100% !important;
 }
-.p-tabview-nav-content {
-  width: -webkit-fill-available;
-}
-
-fieldset {
-  height: 100%;
-}
-
-legend {
-  pointer-events: all;
+.togglebutton-fill-container > div.p-togglebutton {
+  width: 100% !important;
+  height: 100% !important;
+  border: none;
+  background: #f4f4f4;
 }

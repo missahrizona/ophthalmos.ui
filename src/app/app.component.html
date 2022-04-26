@@ -1,12 +1,9 @@
-<div
-  #bgWrap
-  class="bg-wrap"
-  [ngClass]="{ 'bg-wrap-nodisplay': showAppWithOpacity }"
-></div>
+<div #bgWrap class="bg-wrap"></div>
 
 <div
+  *ngIf="removeElement == false"
   class="home-wrap p-component"
-  [ngClass]="{ 'home-wrap-nodisplay': showAppWithOpacity }"
+  [ngClass]="{ hide: hideOverlay }"
 >
   <span class="header-text glow">Ophthalmos</span>
   <br />
@@ -17,22 +14,17 @@
 </div>
 
 <div
-  class="global-container p-component"
-  [ngClass]="{ 'allow-pointer-events': allowPointerEvents }"
+  *ngIf="removeElementLast == false"
+  class="sliding-open-viewport"
+  [ngClass]="{ hide: hideOverlay }"
 >
   <div
-    [ngClass]="{
-      'global-animation': animate,
-      'global-bg-transparent': showAppWithOpacity
-    }"
-    class="global-animation-inner p-component"
-    (transitionend)="onTransitionEnd()"
-  >
-    <div
-      class="global-inner p-component"
-      [ngClass]="{ 'global-inner-show': showAppWithOpacity }"
-    >
-      <router-outlet></router-outlet>
-    </div>
-  </div>
+    class="sliding-open-inner"
+    [ngClass]="{ 'full-width': animate, hide: hideOverlay }"
+    (transitionend)="onTransitionEnd($event)"
+  ></div>
+</div>
+
+<div class="app-viewport">
+  <router-outlet></router-outlet>
 </div>
