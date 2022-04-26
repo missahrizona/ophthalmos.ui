@@ -38,6 +38,16 @@ import { ChipsModule } from 'primeng/chips';
 import { ToggleButtonModule } from 'primeng/togglebutton';
 
 import { PdfViewerModule } from 'ng2-pdf-viewer';
+import {
+  FontAwesomeModule,
+  FaIconLibrary,
+} from '@fortawesome/angular-fontawesome';
+import {
+  faCoffee,
+  faHeart,
+  faHeartbeat,
+  faHeartPulse,
+} from '@fortawesome/free-solid-svg-icons';
 
 @NgModule({
   declarations: [
@@ -79,8 +89,18 @@ import { PdfViewerModule } from 'ng2-pdf-viewer';
     CheckboxModule,
     ChipsModule,
     ToggleButtonModule,
+    FontAwesomeModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule {
+  constructor(fontAwesomeIconLibrary: FaIconLibrary) {
+    fontAwesomeIconLibrary.addIcons(
+      faCoffee,
+      faHeart,
+      faHeartbeat,
+      faHeartPulse
+    );
+  }
+}

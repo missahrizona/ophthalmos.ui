@@ -1,11 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  OnInit,
+  ViewChild,
+  AfterViewInit,
+} from '@angular/core';
 
 @Component({
   selector: 'her-heath-history',
   templateUrl: './heath-history.component.html',
   styleUrls: ['./heath-history.component.scss'],
 })
-export class HeathHistoryComponent implements OnInit {
+export class HeathHistoryComponent implements OnInit, AfterViewInit {
   constructor() {
     this.conditions = ['Cataracts'];
     this.selectedConditions = [];
@@ -48,6 +54,8 @@ export class HeathHistoryComponent implements OnInit {
     ];
   }
 
+  @ViewChild('heartIcon', { read: ElementRef }) heart: ElementRef;
+
   conditions: string[];
   selectedConditions: string[];
   yesNo: any[];
@@ -62,4 +70,13 @@ export class HeathHistoryComponent implements OnInit {
   physicalExam: any[];
 
   ngOnInit(): void {}
+
+  ngAfterViewInit() {
+    this.heart.nativeElement.firstChild.classList.add('fa-beat');
+  }
+
+  setWidth(ele: any) {
+    console.log(ele);
+    ele.style.width = '100%';
+  }
 }

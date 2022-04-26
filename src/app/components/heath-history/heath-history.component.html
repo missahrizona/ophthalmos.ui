@@ -85,22 +85,42 @@
     <p-card header="Physical Exam">
       <div class="grid p-fluid">
         <ng-container *ngFor="let pe of physicalExam">
-          <div style="text-align: right" class="col-4">
-            <h5>{{ pe.label }}</h5>
-          </div>
+          <div #row class="her-flex">
+            <div
+              style="text-align: right"
+              class="col-4 pe"
+              (mouseover)="line.style.width = '100%'"
+              (mouseout)="line.style.width = '0'"
+            >
+              <h5>{{ pe.label }}</h5>
+            </div>
+            <div
+              class="col-4 flex justify-content-left align-items-center pe"
+              (mouseover)="line.style.width = '100%'"
+              (mouseout)="line.style.width = '0'"
+            >
+              <div #line class="line-anim"></div>
+            </div>
 
-          <div
-            class="col-4 col-offset-4 flex justify-content-center align-items-center"
-          >
-            <p-toggleButton
-              class="togglebutton-fill-container"
-              [(ngModel)]="pe.checked"
-              [onIcon]="'pi pi-check'"
-              offIcon="pi pi-stop"
-            ></p-toggleButton>
+            <div
+              class="col-4 flex justify-content-center align-items-center pe"
+              (mouseover)="line.style.width = '100%'"
+              (mouseout)="line.style.width = '0'"
+            >
+              <p-toggleButton
+                class="togglebutton-fill-container"
+                [(ngModel)]="pe.checked"
+                [onIcon]="'pi pi-check'"
+                offIcon="pi pi-stop"
+                (onChange)="setWidth(rowBehind)"
+              ></p-toggleButton>
+            </div>
+
+            <div #rowBehind class="her-flex-behind"></div>
           </div>
         </ng-container>
       </div>
+      <fa-icon #heartIcon icon="heart"></fa-icon>
     </p-card>
   </div>
 </div>
