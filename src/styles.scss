@@ -1,8 +1,6 @@
 // @import url("../src/assets/themes/soho-dark.css");
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap");
-
-* {
-}
+@import url("./assets/styles/scrollbar.scss");
 
 html {
   height: 100%;
@@ -51,8 +49,17 @@ p-menubar > .p-menubar {
   color: var(--red-800);
 }
 
+.p-tabview-panel {
+  max-height: 75vmax;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 10px;
+}
+
 .p-toggleable-content {
-  max-width: 98vw !important;
-  max-height:  95vh !important;
-  overflow: auto !important;
+  max-width: inherit;
+}
+
+.p-fieldset {
+  max-width: 95vw !important;
 }
