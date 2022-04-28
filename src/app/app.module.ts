@@ -47,7 +47,14 @@ import {
   faHeart,
   faHeartbeat,
   faHeartPulse,
+  faDroplet,
+  faLeaf,
+  faMoon,
+  faFileMedical,
+  faDna,
 } from '@fortawesome/free-solid-svg-icons';
+
+import {} from '@fortawesome/free-regular-svg-icons';
 
 @NgModule({
   declarations: [
@@ -100,7 +107,12 @@ export class AppModule {
       faCoffee,
       faHeart,
       faHeartbeat,
-      faHeartPulse
+      faHeartPulse,
+      faDroplet,
+      faLeaf,
+      faMoon,
+      faFileMedical,
+      faDna
     );
   }
 }

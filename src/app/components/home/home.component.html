@@ -8,59 +8,63 @@
 </p-menubar>
 
 <div class="home-viewport p-input-filled">
-  <div class="patient-container">
-    <p-fieldset [toggleable]="true">
-      <ng-template pTemplate="header"><div>Patient Zero</div></ng-template>
-      <p-tabView [scrollable]="true">
-        <p-tabPanel tooltip="Demographics">
-          <ng-template pTemplate="header">
-            <i class="pi pi-id-card"></i>
-            <span class="icon-header-gap"></span>
-            <span>Demographics</span>
-          </ng-template>
-          <her-demographics></her-demographics>
-        </p-tabPanel>
-        <p-tabPanel tooltip="Health History">
-          <ng-template pTemplate="header">
-            <i class="pi pi-user"></i>
-            <span class="icon-header-gap"></span>
-            <span>Health History</span>
-          </ng-template>
-          <her-heath-history></her-heath-history>
-        </p-tabPanel>
-        <p-tabPanel tooltip="Physical Exam Details">
-          <ng-template pTemplate="header">
-            <i class="pi pi-search"></i>
-            <span class="icon-header-gap"></span>
-            <span>Physical Exam Detail</span>
-          </ng-template>
-          <her-physical-exam-detail></her-physical-exam-detail>
-        </p-tabPanel>
-        <p-tabPanel tooltip="Vitals">
-          <ng-template pTemplate="header">
-            <i class="pi pi-heart"></i>
-            <span class="icon-header-gap"></span>
-            <span>Vitals</span>
-          </ng-template>
-          <her-vitals></her-vitals>
-        </p-tabPanel>
-        <p-tabPanel tooltip="Surgical Procedures">
-          <ng-template pTemplate="header">
-            <i class="pi pi-pencil"></i>
-            <span class="icon-header-gap"></span>
-            <span>Surgical Procedures</span>
-          </ng-template>
-          <her-surgical-procedures></her-surgical-procedures>
-        </p-tabPanel>
-        <p-tabPanel tooltip="Documents">
-          <ng-template pTemplate="header">
-            <i class="pi pi-file"></i>
-            <span class="icon-header-gap"></span>
-            <span>Documents</span>
-          </ng-template>
-          <her-documents></her-documents>
-        </p-tabPanel>
-      </p-tabView>
-    </p-fieldset>
+  <div class="grid p-fluid">
+    <div class="col-12">
+      <div class="patient-container">
+        <p-fieldset [toggleable]="true">
+          <ng-template pTemplate="header"><div>Patient Zero</div></ng-template>
+          <p-tabView [scrollable]="true">
+            <p-tabPanel tooltip="Demographics">
+              <ng-template pTemplate="header">
+                <i class="pi pi-id-card"></i>
+                <span class="icon-header-gap"></span>
+                <span>Demographics</span>
+              </ng-template>
+              <her-demographics></her-demographics>
+            </p-tabPanel>
+            <p-tabPanel tooltip="Health History">
+              <ng-template pTemplate="header">
+                <i class="pi pi-user"></i>
+                <span class="icon-header-gap"></span>
+                <span>Health History</span>
+              </ng-template>
+              <her-heath-history></her-heath-history>
+            </p-tabPanel>
+            <p-tabPanel tooltip="Physical Exam Details">
+              <ng-template pTemplate="header">
+                <i class="pi pi-search"></i>
+                <span class="icon-header-gap"></span>
+                <span>Physical Exam Detail</span>
+              </ng-template>
+              <her-physical-exam-detail></her-physical-exam-detail>
+            </p-tabPanel>
+            <p-tabPanel tooltip="Vitals">
+              <ng-template pTemplate="header">
+                <i class="pi pi-heart"></i>
+                <span class="icon-header-gap"></span>
+                <span>Vitals</span>
+              </ng-template>
+              <her-vitals></her-vitals>
+            </p-tabPanel>
+            <p-tabPanel tooltip="Surgical Procedures">
+              <ng-template pTemplate="header">
+                <i class="pi pi-pencil"></i>
+                <span class="icon-header-gap"></span>
+                <span>Surgical Procedures</span>
+              </ng-template>
+              <her-surgical-procedures></her-surgical-procedures>
+            </p-tabPanel>
+            <p-tabPanel tooltip="Documents">
+              <ng-template pTemplate="header">
+                <i class="pi pi-file"></i>
+                <span class="icon-header-gap"></span>
+                <span>Documents</span>
+              </ng-template>
+              <her-documents></her-documents>
+            </p-tabPanel>
+          </p-tabView>
+        </p-fieldset>
+      </div>
+    </div>
   </div>
 </div>

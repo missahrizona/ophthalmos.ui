@@ -17,14 +17,20 @@
         <div class="col-12"><p-divider></p-divider></div>
 
         <div class="col sm:col-12 lg:col-6">
-          <h5>Allergies?</h5>
+          <h5 class="text-base font-light">
+            <fa-icon style="color: var(--green-700)" icon="leaf"></fa-icon>
+            <span class="ml-3">Allergies?</span>
+          </h5>
           <p-selectButton
             [options]="yesNo"
             [(ngModel)]="allergy"
           ></p-selectButton>
         </div>
         <div class="col sm:col-12 lg:col-6">
-          <h5>Sickle Cell?</h5>
+          <h5 class="text-base font-light">
+            <fa-icon style="color: var(--red-800)" icon="moon"></fa-icon>
+            <span class="ml-3">Sickle Cell?</span>
+          </h5>
           <p-selectButton
             [options]="yesNo"
             [(ngModel)]="sickleCell"
@@ -34,7 +40,10 @@
         <div class="col-12"><p-divider></p-divider></div>
 
         <div class="col-12">
-          <h5>Bleeding Tendency?</h5>
+          <h5 class="text-base font-light">
+            <fa-icon style="color: var(--red-800)" icon="droplet"></fa-icon>
+            <span class="ml-3">Bleeding Tendency?</span>
+          </h5>
           <div class="formgroup-inline">
             <div *ngFor="let bt of bleedingTendencies" class="field-checkbox">
               <p-checkbox
@@ -51,7 +60,13 @@
         <div class="col-12"><p-divider></p-divider></div>
 
         <div class="col-12">
-          <h5>Past Medical History</h5>
+          <h5 class="text-base font-light">
+            <fa-icon
+              style="color: var(--gray-300)"
+              icon="file-medical"
+            ></fa-icon>
+            <span class="ml-3">Past Medical History?</span>
+          </h5>
 
           <div class="formgroup-inline">
             <div
@@ -72,11 +87,32 @@
         <div class="col-12"><p-divider></p-divider></div>
 
         <div class="col-12">
-          <h5>Past Surgeries</h5>
-          <p-chips [(ngModel)]="pastSurgeries" separator=","></p-chips>
+          <h5 class="text-base font-light flex flex-row align-items-center">
+            <img
+              width="16px"
+              height="16px"
+              src="../../../assets/svg/stretcher.svg"
+            />
+            <span class="ml-3">Past Surgeries</span>
+          </h5>
+          <p-chips
+            placeholder="Type ... ... enter to save"
+            [(ngModel)]="pastSurgeries"
+            separator=","
+          ></p-chips>
 
-          <h5>History of conditions in Family</h5>
-          <p-chips [(ngModel)]="pastFamilyConditions" separator=","></p-chips>
+          <h5 class="text-base font-light">
+            <fa-icon style="color: var(--blue-300)" icon="dna"></fa-icon>
+            <span class="ml-3">History of Medical Conditions in Family</span>
+          </h5>
+          <p-chips
+            placeholder="Type ... ... enter to save"
+            [(ngModel)]="pastFamilyConditions"
+            separator=","
+          ></p-chips>
+        </div>
+        <div class="col-12 flex justify-content-center">
+          <fa-icon #heart1 icon="heart"></fa-icon>
         </div>
       </div>
     </p-card>
@@ -84,6 +120,9 @@
   <div class="col sm:col-12 lg:col-6">
     <p-card header="Physical Exam">
       <div class="grid p-fluid">
+        <div class="col-4 col-offset-8 text-center text-base font-light">
+          <span>Normal for patient?</span>
+        </div>
         <ng-container *ngFor="let pe of physicalExam">
           <div #row class="her-flex">
             <div
@@ -119,8 +158,10 @@
             <div #rowBehind class="her-flex-behind"></div>
           </div>
         </ng-container>
+        <div class="col-12 flex justify-content-center">
+          <fa-icon #heart2 icon="heart"></fa-icon>
+        </div>
       </div>
-      <fa-icon #heartIcon icon="heart"></fa-icon>
     </p-card>
   </div>
 </div>

@@ -31,7 +31,7 @@ export class HeathHistoryComponent implements OnInit, AfterViewInit {
       { name: 'COPD', id: 'pmh-copd' },
       { name: 'Hypertension (HTN)', id: 'pmh-htn' },
       { name: 'Coronary Artery Disease (CAD)', id: 'pmh-cad' },
-      { name: 'Peripheral Vascular Disease (PVD', id: 'pmh-pvd' },
+      { name: 'Peripheral Vascular Disease (PVD)', id: 'pmh-pvd' },
       { name: 'Congestive Heart Failure (CHF)', id: 'pmh-chf' },
       { name: 'Hypothyroidism', id: 'pmh-hypothyroidism' },
     ];
@@ -54,7 +54,8 @@ export class HeathHistoryComponent implements OnInit, AfterViewInit {
     ];
   }
 
-  @ViewChild('heartIcon', { read: ElementRef }) heart: ElementRef;
+  @ViewChild('heart1', { read: ElementRef }) heart1: ElementRef;
+  @ViewChild('heart2', { read: ElementRef }) heart2: ElementRef;
 
   conditions: string[];
   selectedConditions: string[];
@@ -72,11 +73,12 @@ export class HeathHistoryComponent implements OnInit, AfterViewInit {
   ngOnInit(): void {}
 
   ngAfterViewInit() {
-    this.heart.nativeElement.firstChild.classList.add('fa-beat');
+    this.heart1.nativeElement.firstChild.classList.add('fa-beat');
+    this.heart2.nativeElement.firstChild.classList.add('fa-beat');
   }
 
   setWidth(ele: any) {
-    console.log(ele);
-    ele.style.width = '100%';
+    let width = ele.style.width;
+    ele.style.width = !width || width == '0px' ? '100%' : '0px';
   }
 }
