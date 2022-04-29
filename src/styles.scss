@@ -15,7 +15,6 @@ body {
   user-select: none;
   background: #333333;
   box-sizing: border-box;
-  //   z-index: 1000;
   font-family: var(--font-family);
 }
 
@@ -49,17 +48,59 @@ p-menubar > .p-menubar {
   color: var(--red-800);
 }
 
-.p-tabview-panel {
-  max-height: 75vmax;
-  overflow-y: auto;
-  overflow-x: hidden;
-  padding: 10px;
+.p-fieldset,
+.p-fieldset-content,
+.p-fieldset-toggleable {
+  width: -webkit-fill-available;
+  max-width: calc(100vw - 90px) !important;
 }
 
-.p-toggleable-content {
-  max-width: inherit;
-}
+// .p-tabview-panel {
+//   max-height: 75vh;
+//   padding: 10px;
+//   overflow: auto;
+// }
 
-.p-fieldset {
-  max-width: 95vw !important;
-}
+// .p-toggleable-content {
+//   max-width: inherit;
+// }
+
+// .p-fieldset {
+//   max-width: 95vw !important;
+//   max-height: 90vh;
+// }
+
+// .grid {
+//   max-height: 70vh !important;
+//   overflow-y: auto;
+// }
+
+// .p-tabview {
+//   max-height: 60vh;
+//     display: flex;
+//     overflow-y: auto;
+//     overflow-x: hidden;
+// }
+
+// .p-tabview-panels {
+//   max-height: fit-content(60vh);
+//   overflow-y: auto;
+// }
+
+// .p-tabview-panel {
+//   height: min-content;
+//   max-height: min-content(60vh);
+//   overflow-y: auto;
+//   overflow-x: hidden;
+// }
+
+// .p-tabview-panels,
+// .p-tabview-panel {
+//   overflow-y: auto;
+//   overflow-x: hidden;
+//   height: min-content;
+// }
+
+// .p-tabview {
+//   overflow: hidden;
+// }

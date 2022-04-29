@@ -36,6 +36,7 @@ import { SelectButtonModule } from 'primeng/selectbutton';
 import { CheckboxModule } from 'primeng/checkbox';
 import { ChipsModule } from 'primeng/chips';
 import { ToggleButtonModule } from 'primeng/togglebutton';
+import { ScrollPanelModule } from 'primeng/scrollpanel';
 
 import { PdfViewerModule } from 'ng2-pdf-viewer';
 import {
@@ -97,6 +98,7 @@ import {} from '@fortawesome/free-regular-svg-icons';
     ChipsModule,
     ToggleButtonModule,
     FontAwesomeModule,
+    ScrollPanelModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

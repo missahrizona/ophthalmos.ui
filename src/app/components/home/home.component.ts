@@ -1,6 +1,6 @@
-import { DemographicsComponent } from './../demographics/demographics.component';
 import { Component, OnInit } from '@angular/core';
 import { MenuItem } from 'primeng/api';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'her-home',
@@ -8,10 +8,12 @@ import { MenuItem } from 'primeng/api';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
+  constructor(private router: Router, private route: ActivatedRoute) {}
+
   menuItems: MenuItem[];
-  tabItems: MenuItem[];
-  activeTab: MenuItem;
-  products: any[];
+  activeTabIndex: number;
+  indexToPath: string[];
+  pathToIndex: any;
 
   ngOnInit() {
     this.menuItems = [
@@ -26,20 +28,30 @@ export class HomeComponent implements OnInit {
       },
     ];
 
-    this.tabItems = [
-      { label: 'Demographics', icon: 'pi pi-fw pi-id-card' },
-      { label: 'Health History', icon: 'pi pi-fw pi-calendar' },
-      { label: 'Physical Exam Detail', icon: 'pi pi-fw pi-eye' },
-      { label: 'Vitals', icon: 'pi pi-fw pi-heart' },
-      { label: 'Surgical Procedures', icon: 'pi pi-fw pi-pencil' },
-      { label: 'Documents', icon: 'pi pi-fw pi-file-o' },
+    this.indexToPath = [
+      '/home/demographics',
+      '/home/hx',
+      '/home/ped',
+      '/home/vitals',
+      '/home/op',
+      '/home/docs',
     ];
-    this.activeTab = this.tabItems[0];
+
+    this.pathToIndex = {
+      '/home/demographics': 0,
+      '/home/hx': 1,
+      '/home/ped': 2,
+      '/home/vitals': 3,
+      '/home/op': 4,
+      '/home/docs': 5,
+    };
+
+    this.activeTabIndex = this.pathToIndex[this.router.url];
   }
 
-  toggle(evt: any) {
-    console.log('toggle fieldset');
-    //             fields.style.height =
-    // fields.style.height == 'auto' ? '100%' : 'auto';
+  onTabviewChange(event: any) {
+    this.activeTabIndex = event.index;
+    let route = this.indexToPath[this.activeTabIndex];
+    this.router.navigate([route]);
   }
 }

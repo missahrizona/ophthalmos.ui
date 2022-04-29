@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DocumentsComponent implements OnInit {
   constructor() {
-    this.pdfSrc = 'assets/documents/MarkGarciaResume.pdf';
+    this.pdfSrc = '../assets/documents/MarkGarciaResume.pdf';
   }
 
   pdfSrc: string;
