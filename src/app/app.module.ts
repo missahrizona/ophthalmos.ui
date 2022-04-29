@@ -37,6 +37,7 @@ import { CheckboxModule } from 'primeng/checkbox';
 import { ChipsModule } from 'primeng/chips';
 import { ToggleButtonModule } from 'primeng/togglebutton';
 import { ScrollPanelModule } from 'primeng/scrollpanel';
+import { RadioButtonModule } from 'primeng/radiobutton';
 
 import { PdfViewerModule } from 'ng2-pdf-viewer';
 import {
@@ -53,6 +54,7 @@ import {
   faMoon,
   faFileMedical,
   faDna,
+  faEye,
 } from '@fortawesome/free-solid-svg-icons';
 
 import {} from '@fortawesome/free-regular-svg-icons';
@@ -99,6 +101,7 @@ import {} from '@fortawesome/free-regular-svg-icons';
     ToggleButtonModule,
     FontAwesomeModule,
     ScrollPanelModule,
+    RadioButtonModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
@@ -114,7 +117,8 @@ export class AppModule {
       faLeaf,
       faMoon,
       faFileMedical,
-      faDna
+      faDna,
+      faEye
     );
   }
 }

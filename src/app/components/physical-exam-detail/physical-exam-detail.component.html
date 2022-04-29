@@ -1,7 +1,138 @@
 <div class="grid p-fluid">
   <div class="col-12">
     <p-card header="Slit Lamp Exam">
-      <ng-template pTemplate="content"> </ng-template>
+      <ng-template pTemplate="content">
+        <!-- <p-divider align="left">
+          <div class="inline-flex align-items-center">
+            <b>Pupils</b>
+          </div>
+        </p-divider> -->
+        <div class="grid p-fluid">
+          <div class="col-12">
+            <p-card>
+              <ng-template pTemplate="title">Pupils </ng-template>
+              <ng-template pTemplate="subtitle">
+                <p-divider align="left">
+                  <div class="inline-flex align-items-center">
+                    <span>Both</span>
+                    <span style="width: 10px"></span>
+
+                    <fa-icon style="font-size: 13px" icon="eye"></fa-icon>
+                    <span style="width: 3px"></span>
+
+                    <fa-icon style="font-size: 13px" icon="eye"></fa-icon>
+                  </div>
+                </p-divider>
+              </ng-template>
+              <ng-template pTemplate="content">
+                <div class="grid p-fluid">
+                  <div
+                    class="col-1 flex flex-column justify-content-evenly align-items-center"
+                  >
+                    <label class="text-sm font-light" for="binary"
+                      >Normal?</label
+                    >
+                    <p-checkbox
+                      [(ngModel)]="pupilBothNormal"
+                      [binary]="true"
+                      inputId="binary"
+                    ></p-checkbox>
+                  </div>
+
+                  <div class="col-2 flex flex-row align-items-center">
+                    <p-divider layout="vertical"><b>Shape</b></p-divider>
+                    <div class="flex flex-column justify-content-evenly h-full">
+                      <div class="field-radiobutton m-0">
+                        <p-radioButton
+                          name="group"
+                          inputId="round"
+                          value="a"
+                          [(ngModel)]="pupilBothShape"
+                        ></p-radioButton>
+                        <label class="text-sm font-light" for="round"
+                          >Round</label
+                        >
+                      </div>
+                      <div class="field-radiobutton m-0">
+                        <p-radioButton
+                          name="group"
+                          inputId="irregular"
+                          value="b"
+                          [(ngModel)]="pupilBothShape"
+                        ></p-radioButton>
+                        <label class="text-sm font-light" for="irregular"
+                          >Irregular</label
+                        >
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-3 flex flex-row align-items-center">
+                    <p-divider layout="vertical"><b>Diameter</b></p-divider>
+                    <p-dropdown
+                      [options]="mm"
+                      [(ngModel)]="pupilBothMM"
+                      placeholder="mm"
+                      optionLabel="name"
+                      [showClear]="true"
+                      [style]="{ width: '105px' }"
+                    ></p-dropdown>
+                  </div>
+                  <div class="col-3 flex flex-row align-items-center">
+                    <p-divider layout="vertical"><b>RAPD</b></p-divider>
+                    <div class="flex flex-row justify-content-evenly w-full">
+                      <div class="field-radiobutton m-0">
+                        <p-radioButton
+                          name="group"
+                          inputId="round"
+                          value="a"
+                          [(ngModel)]="pupilBothRAPD"
+                        ></p-radioButton>
+                        <label class="text-sm font-light" for="round">Y</label>
+                      </div>
+                      <div class="field-radiobutton m-0">
+                        <p-radioButton
+                          name="group"
+                          inputId="irregular"
+                          value="b"
+                          [(ngModel)]="pupilBothRAPD"
+                        ></p-radioButton>
+                        <label class="text-sm font-light" for="irregular"
+                          >N</label
+                        >
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-3 flex flex-row align-items-center">
+                    <p-divider layout="vertical"><b>Synechia</b></p-divider>
+                    <div class="flex flex-row justify-content-evenly w-full">
+                      <div class="field-radiobutton m-0">
+                        <p-radioButton
+                          name="group"
+                          inputId="round"
+                          value="a"
+                          [(ngModel)]="pupilBothSynechia"
+                        ></p-radioButton>
+                        <label class="text-sm font-light" for="round">Y</label>
+                      </div>
+                      <div class="field-radiobutton m-0">
+                        <p-radioButton
+                          name="group"
+                          inputId="irregular"
+                          value="b"
+                          [(ngModel)]="pupilBothSynechia"
+                        ></p-radioButton>
+                        <label class="text-sm font-light" for="irregular"
+                          >N</label
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </ng-template>
+            </p-card>
+          </div>
+        </div>
+      </ng-template>
     </p-card>
   </div>
 </div>
