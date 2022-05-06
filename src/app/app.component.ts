@@ -29,12 +29,26 @@ export class AppComponent implements OnInit, AfterViewInit {
     this.hideOverlay = false;
     this.removeElement = false;
     this.removeElementLast = false;
+
+    this.iframe = (() => {
+      try {
+        if (window.self !== window.top) {
+          let html = this.document.querySelector('html') as HTMLHtmlElement;
+
+          html.setAttribute('style', 'font-size: 3.5vw !important');
+        }
+        return false;
+      } catch (e) {
+        return true;
+      }
+    })();
   }
 
   animate: boolean;
   hideOverlay: boolean;
   removeElement: boolean;
   removeElementLast: boolean;
+  iframe: boolean;
 
   @ViewChild('bgWrap') bgWrap: ElementRef;
 
